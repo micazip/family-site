@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "family-site (vercel dev)",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/mica/node/node-v22.14.0-win-x64/node_modules/vercel/dist/index.js", "dev"],
+      "port": 3000
+    }
+  ]
+}

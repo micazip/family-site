@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>고려대학교 역사교육과 예비 28학번 전민서</title>
+  <!-- PWA / 홈화면 아이콘 -->
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="전민서" />
+  <meta name="theme-color" content="#8B0000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="header-inner">
+      <div class="header-title">
+        <img src="img/ku-symbol.png" alt="고려대학교 심벌" class="header-ku-symbol" />
+        <span class="header-brand">고려대학교 역사교육과 예비 28학번 전민서</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main>
+
+    <!-- HOME -->
+    <section id="section-home" class="section">
+      <div class="fullhero">
+        <div class="fh-top">
+            <img src="img/ku-symbol.png" alt="고려대학교 심벌" class="ku-symbol-img" />
+          <h2 class="fh-title">고려대학교<br>역사교육과<br>예비28학번</h2>
+          <p class="fh-subtitle">전민서의 꿈의 여정</p>
+          <p class="fh-date" id="home-today-date"></p>
+        </div>
+        <div class="fh-bottom">
+          <button class="fh-goto-btn" onclick="showSection('schedule')">
+            민서시간표 보기
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="section-schedule" class="section active">
+      <div class="schedule-grid-wrap">
+        <div id="schedule-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
