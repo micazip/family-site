@@ -664,7 +664,10 @@ const SCHED_COLORS = {
   mint:    { bg: '#B2EBE0', text: '#000' },
 };
 
-const SCHEDULE_DATA = [
+/* 방학 중이면 true, 개학하면 false로 바꾸면 학기 시간표로 복귀 */
+const IS_VACATION = true;
+
+const SCHEDULE_DATA_SEMESTER = [
   // 월요일
   [
     { s:'08:20', e:'09:10', label:'한문',      type:'school', period:'1교시' },
@@ -762,6 +765,79 @@ const SCHEDULE_DATA = [
   ],
 ];
 
+const SCHEDULE_DATA_VACATION = [
+  // 월요일
+  [
+    { s:'08:30', e:'10:00', label:'식사&준비', type:'meal' },
+    { s:'10:00', e:'13:30', label:'자율학습',  type:'self' },
+    { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
+    { s:'14:30', e:'17:20', label:'자율학습',  type:'self' },
+    { s:'17:30', e:'18:30', label:'식사&이동', type:'meal' },
+    { s:'18:30', e:'22:00', label:'수학',      type:'math', note:'22:00 매쓰메카' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
+  ],
+  // 화요일
+  [
+    { s:'08:30', e:'10:00', label:'식사&준비', type:'meal' },
+    { s:'10:00', e:'13:30', label:'자율학습',  type:'self' },
+    { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
+    { s:'14:30', e:'18:20', label:'자율학습',  type:'self' },
+    { s:'18:20', e:'19:20', label:'식사&이동', type:'meal' },
+    { s:'19:20', e:'22:00', label:'영어',      type:'english', note:'22:00 영어끝' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
+  ],
+  // 수요일
+  [
+    { s:'08:30', e:'10:00', label:'식사&준비', type:'meal' },
+    { s:'10:00', e:'13:30', label:'자율학습',  type:'self' },
+    { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
+    { s:'14:30', e:'19:10', label:'자율학습',  type:'self' },
+    { s:'19:10', e:'20:20', label:'식사',      type:'meal' },
+    { s:'20:20', e:'24:00', label:'자율학습',  type:'self' },
+  ],
+  // 목요일
+  [
+    { s:'08:30', e:'10:00', label:'식사&준비', type:'meal' },
+    { s:'10:00', e:'13:30', label:'자율학습',  type:'self' },
+    { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
+    { s:'14:30', e:'19:10', label:'자율학습',  type:'self' },
+    { s:'19:10', e:'20:20', label:'식사',      type:'meal' },
+    { s:'20:20', e:'24:00', label:'자율학습',  type:'self' },
+  ],
+  // 금요일
+  [
+    { s:'08:30', e:'10:00', label:'식사&준비', type:'meal' },
+    { s:'10:00', e:'13:30', label:'자율학습',  type:'self' },
+    { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
+    { s:'14:30', e:'17:20', label:'자율학습',  type:'self' },
+    { s:'17:30', e:'18:30', label:'식사&이동', type:'meal' },
+    { s:'18:30', e:'22:00', label:'수학',      type:'math', note:'22:00 매쓰메카' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
+  ],
+  // 토요일
+  [
+    { s:'08:30', e:'10:00', label:'식사&준비', type:'meal' },
+    { s:'10:00', e:'13:30', label:'자율학습',  type:'self' },
+    { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
+    { s:'14:30', e:'17:00', label:'영어',      type:'english', note:'17:00 영어끝' },
+    { s:'17:30', e:'19:00', label:'자율학습',  type:'self' },
+    { s:'19:00', e:'20:30', label:'식사',      type:'meal' },
+    { s:'20:30', e:'24:00', label:'자율학습',  type:'self' },
+  ],
+  // 일요일
+  [
+    { s:'08:30', e:'10:00', label:'식사&준비', type:'meal' },
+    { s:'10:00', e:'13:30', label:'자율학습',  type:'self' },
+    { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
+    { s:'14:30', e:'18:00', label:'수학',      type:'math', note:'18:00 매쓰메카' },
+    { s:'18:30', e:'19:30', label:'자율학습',  type:'self' },
+    { s:'19:30', e:'20:30', label:'식사',      type:'meal' },
+    { s:'20:30', e:'24:00', label:'자율학습',  type:'self' },
+  ],
+];
+
+const SCHEDULE_DATA = IS_VACATION ? SCHEDULE_DATA_VACATION : SCHEDULE_DATA_SEMESTER;
+
 const SCHED_DAYS = ['월', '화', '수', '목', '금', '토', '일'];
 const SCHED_START_H = 8;   // 08:00
 const PX_PM = 1.3;          // pixels per minute
@@ -775,26 +851,28 @@ function _dur(s, e) {
   const [eh, em] = e.split(':').map(Number);
   return ((eh * 60 + em) - (sh * 60 + sm)) * PX_PM;
 }
+function _fmtHM(mins) {
+  return `${String(Math.floor(mins / 60)).padStart(2,'0')}:${String(mins % 60).padStart(2,'0')}`;
+}
 
 let schedRendered = false;
 function renderSchedule() {
   if (schedRendered) return;
   schedRendered = true;
 
-  const totalH = (24 - SCHED_START_H) * 60 * PX_PM + 300; // 08:00→24:00 + 하단 여백
-  const hourH  = 60 * PX_PM; // pixels per hour
-  const totalHours = 24 - SCHED_START_H; // 16 hours
+  const startMin = SCHED_START_H * 60;
+  const endMin = 24 * 60;
+  const totalH = (endMin - startMin) * PX_PM + 300; // 시작→24:00 + 하단 여백
 
   let html = `<div class="sch-inner" style="height:${totalH}px">`;
 
-  // ── Time axis ──────────────────────────────────────────────
+  // ── Time axis (정시만 라벨: 08:00~24:00) ────────────────────
   html += '<div class="sch-axis">';
-  for (let h = SCHED_START_H; h <= 24; h++) {
-    const y = (h - SCHED_START_H) * hourH;
-    const isFirst = h === SCHED_START_H;
-    const isLast  = h === 24;
-    const shift   = isFirst ? 'translateY(2px)' : isLast ? 'translateY(-100%)' : 'translateY(-50%)';
-    html += `<div class="sch-time-lbl" style="top:${y}px;transform:${shift}">${String(h).padStart(2,'0')}:00</div>`;
+  for (let m = startMin; m <= endMin; m += 60) {
+    const y = (m - startMin) * PX_PM;
+    const isLast = m === endMin;
+    const shift  = isLast ? 'translateY(-100%)' : 'translateY(-50%)';
+    html += `<div class="sch-time-lbl" style="top:${y}px;transform:${shift}">${_fmtHM(m)}</div>`;
   }
   html += '</div>';
 
@@ -811,13 +889,12 @@ function renderSchedule() {
     html += `<div class="sch-col-hdr${isSat ? ' hdr-sat' : isSun ? ' hdr-sun' : ''}">${day}</div>`;
     html += `<div class="sch-col-body" style="height:${totalH}px">`;
 
-    // Grid lines: full hour + half hour
-    for (let h = 0; h <= totalHours; h++) {
-      const y = h * hourH;
-      html += `<div class="sch-hr-line" style="top:${y}px"></div>`;
-      if (h < totalHours) {
-        html += `<div class="sch-hf-line" style="top:${y + hourH / 2}px"></div>`;
-      }
+    // Grid lines: 30분 단위 (정시=hr-line, 30분=hf-line)
+    for (let m = startMin; m <= endMin; m += 30) {
+      const y = (m - startMin) * PX_PM;
+      html += m % 60 === 0
+        ? `<div class="sch-hr-line" style="top:${y}px"></div>`
+        : `<div class="sch-hf-line" style="top:${y}px"></div>`;
     }
 
     // Schedule blocks
@@ -848,6 +925,11 @@ function renderSchedule() {
 
   html += '</div>';
   document.getElementById('schedule-grid').innerHTML = html;
+
+  // 요일 헤더("월화수목...") 높이만큼 축에 여백을 줘서 축과 칸의 시간이 어긋나지 않게 정렬
+  const colHdr = document.querySelector('.sch-col-hdr');
+  const axis = document.querySelector('.sch-axis');
+  if (colHdr && axis) axis.style.marginTop = colHdr.offsetHeight + 'px';
 
   // 금/토/일이면 금요일 컬럼부터 보이도록 가로 스크롤
   const _dow = _now.getDay();
