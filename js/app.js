@@ -862,7 +862,7 @@ function renderSchedule() {
 
   const startMin = SCHED_START_H * 60;
   const endMin = 24 * 60;
-  const totalH = (endMin - startMin) * PX_PM + 300; // 시작→24:00 + 하단 여백
+  const totalH = (endMin - startMin) * PX_PM + 75; // 시작→24:00 + 하단 여백
 
   let html = `<div class="sch-inner" style="height:${totalH}px">`;
 
