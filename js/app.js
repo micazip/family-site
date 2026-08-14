@@ -749,9 +749,9 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'12:30', e:'13:30', label:'식사&이동', type:'meal' },
     { s:'13:30', e:'15:30', label:'영어',      type:'english', note:'15:30 영어끝' },
     { s:'16:00', e:'17:30', label:'자율학습',  type:'self' },
-    { s:'17:30', e:'18:30', label:'식사&이동', type:'meal' },
-    { s:'18:30', e:'21:30', label:'국어',      type:'korean', note:'21:30 매쓰메카' },
-    { s:'22:00', e:'24:00', label:'자율학습',  type:'self' },
+    { s:'17:30', e:'18:00', label:'식사&이동', type:'meal' },
+    { s:'18:00', e:'21:00', label:'국어',      type:'korean', note:'21:00 매쓰메카' },
+    { s:'21:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 일요일
   [
