@@ -679,7 +679,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'14:10', e:'15:00', label:'윤사',      type:'school', period:'6교시' },
     { s:'15:10', e:'16:00', label:'공강',      type:'free',   period:'7교시' },
     { s:'16:30', e:'17:40', label:'자율학습',  type:'self' },
-    { s:'17:40', e:'19:40', label:'급식및이동', type:'meal' },
+    { s:'17:40', e:'19:40', label:'급식&이동', type:'meal' },
     { s:'19:40', e:'22:00', label:'영어',      type:'english', note:'22:00 영어끝' },
     { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
