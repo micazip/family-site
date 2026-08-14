@@ -678,11 +678,10 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'13:10', e:'14:00', label:'스문',      type:'school', period:'5교시' },
     { s:'14:10', e:'15:00', label:'윤사',      type:'school', period:'6교시' },
     { s:'15:10', e:'16:00', label:'공강',      type:'free',   period:'7교시' },
-    { s:'16:20', e:'17:00', label:'이동',      type:'meal' },
-    { s:'17:00', e:'19:00', label:'국어',      type:'korean' },
-    { s:'19:00', e:'19:40', label:'식사&이동', type:'meal' },
+    { s:'16:30', e:'17:40', label:'자율학습',  type:'self' },
+    { s:'17:40', e:'19:40', label:'급식및이동', type:'meal' },
     { s:'19:40', e:'22:00', label:'영어',      type:'english', note:'22:00 영어끝' },
-    { s:'22:30', e:'23:45', label:'자율학습',  type:'self' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 화요일
   [
@@ -697,7 +696,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'16:30', e:'17:40', label:'자율학습',  type:'self' },
     { s:'17:40', e:'18:40', label:'급식',      type:'meal' },
     { s:'18:40', e:'22:00', label:'자율학습',  type:'self', note:'22:00 학교' },
-    { s:'22:30', e:'23:45', label:'자율학습',  type:'self' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 수요일
   [
@@ -712,7 +711,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'16:30', e:'17:40', label:'방과후',    type:'after' },
     { s:'17:40', e:'18:40', label:'급식',      type:'meal' },
     { s:'18:40', e:'22:00', label:'자율학습',  type:'self', note:'22:00 학교' },
-    { s:'22:30', e:'23:45', label:'자율학습',  type:'self' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 목요일
   [
@@ -727,7 +726,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'16:30', e:'17:40', label:'방과후',    type:'after' },
     { s:'17:40', e:'18:40', label:'급식',      type:'meal' },
     { s:'18:40', e:'22:00', label:'자율학습',  type:'self', note:'22:00 학교' },
-    { s:'22:30', e:'23:45', label:'자율학습',  type:'self' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 금요일
   [
@@ -741,7 +740,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'16:30', e:'17:40', label:'자율학습',  type:'self' },
     { s:'17:40', e:'18:30', label:'급식&이동', type:'meal' },
     { s:'18:30', e:'22:00', label:'수학',      type:'math', note:'22:00 매쓰메카' },
-    { s:'22:30', e:'23:45', label:'자율학습',  type:'self' },
+    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 토요일
   [
@@ -752,7 +751,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'16:00', e:'17:30', label:'자율학습',  type:'self' },
     { s:'17:30', e:'18:30', label:'식사&이동', type:'meal' },
     { s:'18:30', e:'21:30', label:'국어',      type:'korean', note:'21:30 매쓰메카' },
-    { s:'22:00', e:'23:45', label:'자율학습',  type:'self' },
+    { s:'22:00', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 일요일
   [
@@ -761,7 +760,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'13:30', e:'14:30', label:'식사&이동', type:'meal' },
     { s:'14:30', e:'18:00', label:'수학',      type:'math', note:'18:00 매쓰메카' },
     { s:'18:00', e:'20:00', label:'식사',      type:'meal' },
-    { s:'20:00', e:'23:45', label:'자율학습',  type:'self' },
+    { s:'20:00', e:'24:00', label:'자율학습',  type:'self' },
   ],
 ];
 
