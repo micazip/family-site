@@ -709,9 +709,9 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'14:10', e:'15:00', label:'자율',      type:'mint',   period:'6교시' },
     { s:'15:10', e:'16:00', label:'자율',      type:'mint',   period:'7교시' },
     { s:'16:30', e:'17:40', label:'방과후',    type:'after' },
-    { s:'17:40', e:'18:40', label:'급식',      type:'meal' },
-    { s:'18:40', e:'22:00', label:'자율학습',  type:'self', note:'22:00 학교' },
-    { s:'22:30', e:'24:00', label:'자율학습',  type:'self' },
+    { s:'17:40', e:'19:00', label:'급식&이동', type:'meal' },
+    { s:'19:00', e:'20:40', label:'국어',      type:'korean' },
+    { s:'21:10', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 목요일
   [
