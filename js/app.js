@@ -710,7 +710,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'15:10', e:'16:00', label:'자율',      type:'mint',   period:'7교시' },
     { s:'16:30', e:'17:40', label:'방과후',    type:'after' },
     { s:'17:40', e:'19:00', label:'급식&이동', type:'meal' },
-    { s:'19:00', e:'20:40', label:'국어',      type:'korean' },
+    { s:'19:00', e:'20:40', label:'국어',      type:'korean', note:'20:40 한은정' },
     { s:'21:10', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 목요일
@@ -750,7 +750,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'13:30', e:'15:30', label:'영어',      type:'english', note:'15:30 영어끝' },
     { s:'15:30', e:'17:00', label:'자율학습',  type:'self' },
     { s:'17:00', e:'18:00', label:'식사&이동', type:'meal' },
-    { s:'18:00', e:'21:00', label:'국어',      type:'korean', note:'21:00 매쓰메카' },
+    { s:'18:00', e:'21:00', label:'국어',      type:'korean', note:'21:00 한은정' },
     { s:'21:30', e:'24:00', label:'자율학습',  type:'self' },
   ],
   // 일요일
