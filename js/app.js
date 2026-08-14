@@ -665,7 +665,7 @@ const SCHED_COLORS = {
 };
 
 /* 방학 중이면 true, 개학하면 false로 바꾸면 학기 시간표로 복귀 */
-const IS_VACATION = true;
+const IS_VACATION = false;
 
 const SCHEDULE_DATA_SEMESTER = [
   // 월요일
