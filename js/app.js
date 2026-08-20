@@ -670,13 +670,13 @@ const IS_VACATION = false;
 const SCHEDULE_DATA_SEMESTER = [
   // 월요일
   [
-    { s:'08:20', e:'09:10', label:'인지A',     type:'school', period:'1교시' },
+    { s:'08:20', e:'09:10', label:'영2',       type:'school', period:'1교시' },
     { s:'09:20', e:'10:10', label:'세계사',    type:'school', period:'2교시' },
     { s:'10:20', e:'11:10', label:'미적1',     type:'school', period:'3교시' },
     { s:'11:20', e:'12:10', label:'독서토론',  type:'school', period:'4교시' },
     { s:'12:10', e:'13:10', label:'점심',      type:'meal' },
-    { s:'13:10', e:'14:00', label:'영2',       type:'school', period:'5교시' },
-    { s:'14:10', e:'15:00', label:'공강',      type:'free',   period:'6교시' },
+    { s:'13:10', e:'14:00', label:'음악',      type:'school', period:'5교시' },
+    { s:'14:10', e:'15:00', label:'화법',      type:'school', period:'6교시' },
     { s:'15:10', e:'16:00', label:'사문',      type:'school', period:'7교시' },
     { s:'16:30', e:'17:40', label:'자율학습',  type:'self' },
     { s:'17:40', e:'19:40', label:'급식&이동', type:'meal' },
@@ -686,11 +686,11 @@ const SCHEDULE_DATA_SEMESTER = [
   // 화요일
   [
     { s:'08:20', e:'09:10', label:'사문',      type:'school', period:'1교시' },
-    { s:'09:20', e:'10:10', label:'영2',       type:'school', period:'2교시' },
+    { s:'09:20', e:'10:10', label:'스과',      type:'school', period:'2교시' },
     { s:'10:20', e:'11:10', label:'인지B',     type:'school', period:'3교시' },
     { s:'11:20', e:'12:10', label:'화법',      type:'school', period:'4교시' },
     { s:'12:10', e:'13:10', label:'점심',      type:'meal' },
-    { s:'13:10', e:'14:00', label:'스과',      type:'school', period:'5교시' },
+    { s:'13:10', e:'14:00', label:'공강',      type:'free',   period:'5교시' },
     { s:'14:10', e:'15:00', label:'독서토론',  type:'school', period:'6교시' },
     { s:'15:10', e:'16:00', label:'미적1',     type:'school', period:'7교시' },
     { s:'16:30', e:'17:40', label:'자율학습',  type:'self' },
@@ -701,8 +701,8 @@ const SCHEDULE_DATA_SEMESTER = [
   // 수요일
   [
     { s:'08:20', e:'09:10', label:'현윤',      type:'school', period:'1교시' },
-    { s:'09:20', e:'10:10', label:'음악',      type:'school', period:'2교시' },
-    { s:'10:20', e:'11:10', label:'진로2',     type:'school', period:'3교시' },
+    { s:'09:20', e:'10:10', label:'진로2',     type:'school', period:'2교시' },
+    { s:'10:20', e:'11:10', label:'화법',      type:'school', period:'3교시' },
     { s:'11:20', e:'12:10', label:'영2',       type:'school', period:'4교시' },
     { s:'12:10', e:'13:10', label:'점심',      type:'meal' },
     { s:'13:10', e:'14:00', label:'세계사',    type:'school', period:'5교시' },
@@ -716,12 +716,12 @@ const SCHEDULE_DATA_SEMESTER = [
   // 목요일
   [
     { s:'08:20', e:'09:10', label:'현윤',      type:'school', period:'1교시' },
-    { s:'09:20', e:'10:10', label:'미적1',     type:'school', period:'2교시' },
+    { s:'09:20', e:'10:10', label:'음악',      type:'school', period:'2교시' },
     { s:'10:20', e:'11:10', label:'공강',      type:'free',   period:'3교시' },
-    { s:'11:20', e:'12:10', label:'음악',      type:'school', period:'4교시' },
+    { s:'11:20', e:'12:10', label:'미적1',     type:'school', period:'4교시' },
     { s:'12:10', e:'13:10', label:'점심',      type:'meal' },
-    { s:'13:10', e:'14:00', label:'화법',      type:'school', period:'5교시' },
-    { s:'14:10', e:'15:00', label:'영2',       type:'school', period:'6교시' },
+    { s:'13:10', e:'14:00', label:'영2',       type:'school', period:'5교시' },
+    { s:'14:10', e:'15:00', label:'인지A',     type:'school', period:'6교시' },
     { s:'15:10', e:'16:00', label:'사문',      type:'school', period:'7교시' },
     { s:'16:30', e:'17:40', label:'방과후',    type:'after' },
     { s:'17:40', e:'18:40', label:'급식',      type:'meal' },
@@ -735,7 +735,7 @@ const SCHEDULE_DATA_SEMESTER = [
     { s:'10:20', e:'11:10', label:'인지A',     type:'school', period:'3교시' },
     { s:'11:20', e:'12:10', label:'세계사',    type:'school', period:'4교시' },
     { s:'12:10', e:'13:10', label:'점심',      type:'meal' },
-    { s:'13:10', e:'14:00', label:'화법',      type:'school', period:'5교시' },
+    { s:'13:10', e:'14:00', label:'영2',       type:'school', period:'5교시' },
     { s:'14:10', e:'15:00', label:'현윤',      type:'school', period:'6교시' },
     { s:'15:10', e:'17:30', label:'자율학습',  type:'self' },
     { s:'17:30', e:'18:30', label:'식사&이동', type:'meal' },
